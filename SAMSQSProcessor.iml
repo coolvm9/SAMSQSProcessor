@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/SQSProcessorFunction/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SQSProcessorFunction/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.aws-sam" />
     </content>
     <orderEntry type="jdk" jdkName="16 (3)" jdkType="JavaSDK" />
