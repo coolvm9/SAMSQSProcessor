@@ -22,9 +22,11 @@ Resources:
       MemorySize: 512
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-          PARAM1: VALUE
+          PARAM1: OREYNEEPARRI
+          dbHost: OREYNEEPARRI
+          dbPort: OREYNEEPARRI
       Events:
-        HelloWorld:
+        SQSProcessor:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             Path: /sqshello
@@ -34,12 +36,12 @@ Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  HelloWorldApi:
-    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+  SQSProcessorApi:
+    Description: "API Gateway endpoint URL for Prod stage for SQS Processor"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
-  HelloWorldFunction:
-    Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+  SQSProcessorFunction:
+    Description: "SQS Processor Lambda Function ARN"
+    Value: !GetAtt SQSProcessorFunction.Arn
+  SQSProcessorFunctionIamRole:
+    Description: "Implicit IAM Role created for SQSProcessorFunction"
+    Value: !GetAtt SQSProcessorFunction.Arn
